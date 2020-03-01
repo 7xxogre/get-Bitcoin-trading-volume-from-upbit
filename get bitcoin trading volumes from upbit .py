@@ -6,9 +6,9 @@ vmp = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]] 
 price = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 volume = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 d = datetime.now()
-usersneed = int(input("며칠간의 데이터를 받을지 입력 해주세요.: "))
+usersneed = int(input("How many days of data do you want?: "))
 p = str(d - timedelta(days = usersneed-1)).split()                                  # 오늘부터 며칠간의 데이터를 받을 것인지.
-print(p[0],"가 되면 확인이 끝납니다.\n중간에 프로그램이 멈추면 아무키나 눌러주십시오.\n", sep = "")
+print("Please wait until "p[0],"\nPress any key when the program stops loading.\n", sep = "")
 for i in range(usersneed):
     plus = str(d - timedelta(days = i)).split()
     plus = plus[0]
@@ -68,7 +68,7 @@ plt.plot(hours, vmpm[0])
 plt.plot(hours, vmpm[1])
 plt.xlabel('hours')
 plt.legend(['average', 'mid value'])
-print("창을 닫으시면 volume값의 시간당 평균 그래프가 나옵니다.")
+print("If you close the window, you will get an average graph of the volume value per hour.")
 plt.show()
 
 plt.title("Hourly graph (volume)")
@@ -77,7 +77,7 @@ plt.plot(hours, volm[1])
 plt.xlabel('hours')
 plt.ylabel('coin')
 plt.legend(['average', 'mid value'])
-print("창을 닫으시면 price값의 시간당 평균 그래프가 나옵니다.")
+print("If you close the window, you get average graphs per hour of price values.")
 plt.show()
 
 plt.title("Hourly graph (price)")
@@ -86,5 +86,5 @@ plt.plot(hours, prim[1])
 plt.xlabel('hours')
 plt.ylabel('hundred million dollar')
 plt.legend(['average', 'mid value'])
-print('창을 닫으시면 프로그램이 끝납니다.')
+print('Close the window and the program is over.')
 plt.show()
